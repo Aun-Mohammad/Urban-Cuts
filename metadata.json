@@ -1,0 +1,6 @@
+{
+  "name": "Urban Cuts Men's Salon",
+  "description": "Premium men's salon & barbershop in Zaraj Housing Society, Sector A, Islamabad. Rated 5.0★ on Google. Precision haircuts, beard grooming, and hair treatments.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

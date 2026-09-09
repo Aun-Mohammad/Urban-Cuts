@@ -1,0 +1,29 @@
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="400" fill="#08090B"/>
+  <!-- URBAN text -->
+  <text x="200" y="165" text-anchor="middle" fill="#FFFFFF" font-family="'Oswald', sans-serif" font-size="80" font-weight="900" letter-spacing="8">URBAN</text>
+  
+  <!-- Scissor as letter C -->
+  <g transform="translate(100, 205)">
+    <!-- Top Blade -->
+    <path d="M5 18 L55 35 L48 39 L4 23 Z" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+    <!-- Bottom Blade -->
+    <path d="M5 52 L55 35 L48 31 L4 47 Z" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+    <!-- Pivot Pin -->
+    <circle cx="50" cy="35" r="4" fill="#08090B" stroke="#FFFFFF" stroke-width="2"/>
+    <!-- Top Loop -->
+    <path d="M52 34 C58 29 63 15 74 15 C83 15 87 22 87 30 C87 38 80 40 73 39 C67 38 59 35 52 34 Z" fill="#FFFFFF"/>
+    <ellipse cx="75" cy="27" rx="6" ry="7" fill="#08090B"/>
+    <!-- Bottom Loop -->
+    <path d="M52 36 C58 41 63 55 74 55 C83 55 87 48 87 40 C87 35 81 34 75 34 C67 35 59 36 52 36 Z" fill="#FFFFFF"/>
+    <ellipse cx="75" cy="43" rx="6" ry="7" fill="#08090B"/>
+    <!-- Tang -->
+    <path d="M84 53 Q88 62 80 66 Q75 67 73 63 Q78 60 78 54 Z" fill="#FFFFFF"/>
+  </g>
+
+  <!-- UTS text -->
+  <text x="250" y="255" text-anchor="middle" fill="#FFFFFF" font-family="'Oswald', sans-serif" font-size="78" font-weight="900" letter-spacing="8">UTS</text>
+  
+  <!-- Subtitle -->
+  <text x="200" y="325" text-anchor="middle" fill="#94A3B8" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="700" letter-spacing="6">MEN'S SALON • ISLAMABAD</text>
+</svg>

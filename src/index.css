@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@theme {
+  --font-logo: "Oswald", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif: "Oswald", "Plus Jakarta Sans", sans-serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  
+  /* Logo-Derived Color Scheme: Pure Pitch Black, Razor Silver, Stark White */
+  --color-brand-black: #050506;
+  --color-brand-charcoal: #0e0f12;
+  --color-brand-card: #141519;
+  --color-brand-card-hover: #1b1d23;
+  --color-brand-border: #262832;
+  --color-brand-silver: #e2e8f0;
+  --color-brand-silver-muted: #94a3b8;
+  --color-brand-white: #ffffff;
+}
+
+:root {
+  color-scheme: dark;
+  font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+}
+
+body {
+  background-color: #08090b;
+  color: #f8fafc;
+  overflow-x: hidden;
+}
+
+/* 3D Embossed Logo Text Effect (from uploaded logo) */
+.logo-embossed {
+  text-shadow: 0 2px 0 #9ca3af, 0 4px 10px rgba(0, 0, 0, 0.9);
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #08090b;
+}
+::-webkit-scrollbar-thumb {
+  background: #262832;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #cbd5e1;
+}
+

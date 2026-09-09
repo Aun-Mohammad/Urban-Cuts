@@ -1,0 +1,22 @@
+# Robots.txt for Urban Cuts Men's Salon Islamabad
+User-agent: *
+Allow: /
+Disallow: /admin
+
+# AI Bot Optimization (AEO - Answer Engine Crawlers)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+Sitemap: https://urbancuts.pk/sitemap.xml
