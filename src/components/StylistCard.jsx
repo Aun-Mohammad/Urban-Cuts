@@ -15,40 +15,41 @@ export const StylistCard = ({ stylist, member, onOpenBooking, onBook }) => {
   };
 
   return (
-    <div className="bg-[#121317] border border-[#22242c] rounded-2xl overflow-hidden shadow-xl hover:border-neutral-400/40 transition-all flex flex-col justify-between group">
+    <div className="bg-[#0e1017] border border-[#c8a45d]/25 rounded-2xl overflow-hidden shadow-xl hover:border-[#c8a45d]/60 hover:shadow-2xl hover:shadow-black/70 transition-all flex flex-col justify-between group">
       <div>
-        <div className="aspect-[4/3] overflow-hidden relative bg-[#090a0c]">
+        <div className="aspect-[4/3] overflow-hidden relative bg-[#07080a]">
           <img
             src={person.image}
             alt={`${person.name || 'Master Barber'} - Master Barber at Urban Cuts`}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter contrast-105"
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter contrast-105"
             loading="lazy"
           />
-          <div className="absolute top-3 left-3 bg-black/80 backdrop-blur-md px-2.5 py-1 rounded-md text-[10px] text-white font-bold uppercase tracking-wider border border-[#262832]">
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0e1017] via-transparent to-transparent opacity-80" />
+          <div className="absolute top-3 left-3 bg-black/90 backdrop-blur-md px-3 py-1 rounded-full text-[10px] text-[#dfba73] font-bold uppercase tracking-widest border border-[#c8a45d]/35 font-display shadow-sm">
             {person.experience || 'Master Artisan'}
           </div>
         </div>
 
-        <div className="p-6 space-y-3">
+        <div className="p-6 space-y-3.5">
           <div>
-            <h3 className="font-serif text-2xl font-bold text-white tracking-wide">
+            <h3 className="font-serif text-2xl font-bold text-white tracking-wide group-hover:text-[#dfba73] transition-colors">
               {person.name}
             </h3>
-            <p className="text-xs text-neutral-300 font-semibold tracking-wider uppercase">
+            <p className="text-xs text-[#dfba73] font-semibold tracking-wider uppercase font-display">
               {person.role}
             </p>
           </div>
 
-          <p className="text-xs text-neutral-300 leading-relaxed">
+          <p className="text-xs text-neutral-300 leading-relaxed font-light">
             {person.bio}
           </p>
 
-          <div className="p-3 rounded-xl bg-[#0a0b0d] border border-[#22242c] space-y-1">
-            <span className="text-[10px] uppercase font-bold tracking-wider text-neutral-400 block">
+          <div className="p-3.5 rounded-xl bg-[#08090d] border border-[#c8a45d]/20 space-y-1">
+            <span className="text-[10px] uppercase font-bold tracking-widest text-[#dfba73] block font-display">
               Signature Mastery
             </span>
-            <p className="text-xs text-neutral-200 font-medium">
-              {person.signatureStyle}
+            <p className="text-xs text-neutral-200 font-medium font-artistic text-sm italic">
+              "{person.signatureStyle}"
             </p>
           </div>
         </div>
@@ -57,7 +58,7 @@ export const StylistCard = ({ stylist, member, onOpenBooking, onBook }) => {
       <div className="p-6 pt-0 mt-2">
         <button
           onClick={handleBooking}
-          className="w-full py-2.5 px-4 rounded-xl text-xs font-bold uppercase tracking-wider bg-[#1d1f27] border border-[#333644] text-white hover:bg-white hover:text-black transition-all flex items-center justify-center gap-2"
+          className="w-full py-2.5 px-4 rounded-xl text-xs font-bold uppercase tracking-wider bg-[#141722] border border-[#c8a45d]/30 text-neutral-200 hover:bg-gradient-to-r hover:from-[#dfba73] hover:via-[#c8a45d] hover:to-[#9a7836] hover:text-black hover:border-transparent transition-all flex items-center justify-center gap-2 shadow-sm"
         >
           <Scissors className="w-3.5 h-3.5" />
           <span>Book with {person.name || 'Barber'}</span>

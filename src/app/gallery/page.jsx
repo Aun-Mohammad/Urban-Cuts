@@ -54,29 +54,29 @@ export default function GalleryPage({ onNavigate, onOpenBooking }) {
 
       {/* 1. HEADER */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/20 text-xs font-bold text-neutral-300">
-          <Sparkles className="w-3.5 h-3.5 text-white" />
-          <span>Visual Craftsmanship</span>
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#c8a45d]/10 border border-[#c8a45d]/30 text-xs font-bold text-[#dfba73] font-display">
+          <Sparkles className="w-3.5 h-3.5 text-[#dfba73]" />
+          <span>Visual Craftsmanship • Atelier Portfolio</span>
         </div>
 
         <h1 className="font-serif text-3xl sm:text-5xl font-black text-white tracking-tight uppercase">
           Grooming & Barbering Portfolio
         </h1>
 
-        <p className="text-sm sm:text-base text-neutral-300 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-sm sm:text-base text-neutral-300 max-w-2xl mx-auto leading-relaxed font-light">
           Real craftsmanship from master barbers Nabeel and Shahzaib. Every cut, beard contour, and capillary treatment is tailored to client bone structure.
         </p>
 
         {/* Filter Chips */}
-        <div className="flex flex-wrap items-center justify-center gap-2 pt-2">
+        <div className="flex flex-wrap items-center justify-center gap-2.5 pt-2">
           {categories.map((cat) => (
             <button
               key={cat.id}
               onClick={() => setSelectedCategory(cat.id)}
               className={`px-4 py-2 rounded-xl text-xs font-semibold tracking-wide transition-all ${
                 selectedCategory === cat.id
-                  ? 'bg-white text-black font-bold shadow'
-                  : 'bg-[#121317] text-neutral-400 hover:text-white border border-[#22242c]'
+                  ? 'bg-gradient-to-r from-[#dfba73] via-[#c8a45d] to-[#9a7836] text-black font-bold shadow-md shadow-[#c8a45d]/25 font-display'
+                  : 'leather-surface text-neutral-300 hover:text-[#dfba73] border border-[#c8a45d]/25 hover:border-[#c8a45d]/50'
               }`}
             >
               {cat.label}
@@ -92,7 +92,7 @@ export default function GalleryPage({ onNavigate, onOpenBooking }) {
             <div
               key={item.id}
               onClick={() => handleOpenLightbox(index)}
-              className="group relative rounded-3xl overflow-hidden bg-[#121317] border border-[#22242c] cursor-pointer aspect-[4/3] transform transition-all duration-300 hover:-translate-y-1 hover:border-neutral-500/50 hover:shadow-2xl"
+              className="group relative rounded-3xl overflow-hidden bg-[#090b10] border border-[#c8a45d]/30 cursor-pointer aspect-[4/3] transform transition-all duration-300 hover:-translate-y-1 hover:border-[#c8a45d]/70 hover:shadow-2xl hover:shadow-black/90 shadow-xl"
             >
               <img
                 src={item.image}
@@ -102,21 +102,21 @@ export default function GalleryPage({ onNavigate, onOpenBooking }) {
               />
 
               {/* Overlay on hover */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-80 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent opacity-80 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end">
                 <div className="transform transition-transform duration-300 translate-y-2 group-hover:translate-y-0">
-                  <span className="inline-block px-2.5 py-1 rounded bg-white/10 text-[10px] font-bold tracking-widest text-neutral-300 uppercase mb-2">
+                  <span className="inline-block px-2.5 py-0.5 rounded-full bg-[#c8a45d]/20 border border-[#c8a45d]/40 text-[9px] font-bold tracking-widest text-[#dfba73] uppercase mb-2 font-display">
                     {item.tag || item.category || 'Portfolio'}
                   </span>
-                  <h3 className="font-serif text-lg font-bold text-white leading-snug">
+                  <h3 className="font-serif text-lg font-bold text-white leading-snug group-hover:text-[#dfba73] transition-colors">
                     {item?.title || 'Urban Cuts Style'}
                   </h3>
-                  <p className="text-xs text-neutral-300 mt-1 line-clamp-2">
+                  <p className="text-xs text-neutral-300 mt-1 line-clamp-2 font-light">
                     {item?.description || ''}
                   </p>
                 </div>
 
                 {/* View indicator */}
-                <div className="absolute top-4 right-4 w-9 h-9 rounded-full bg-black/60 backdrop-blur-md border border-white/20 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity">
+                <div className="absolute top-4 right-4 w-9 h-9 rounded-full bg-black/70 backdrop-blur-md border border-[#c8a45d]/40 flex items-center justify-center text-[#dfba73] opacity-0 group-hover:opacity-100 transition-opacity shadow-md shadow-black">
                   <Eye className="w-4 h-4" />
                 </div>
               </div>
@@ -142,16 +142,16 @@ export default function GalleryPage({ onNavigate, onOpenBooking }) {
 
       {/* 3. BOOKING BANNER */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="rounded-3xl bg-[#121317] border border-[#22242c] p-8 text-center space-y-4">
-          <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white uppercase">
+        <div className="rounded-3xl leather-surface border border-[#c8a45d]/35 p-8 text-center space-y-4 shadow-2xl shadow-black/80 relative overflow-hidden">
+          <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white uppercase tracking-wide">
             Like What You See?
           </h3>
-          <p className="text-xs sm:text-sm text-neutral-300 max-w-lg mx-auto">
+          <p className="text-xs sm:text-sm text-neutral-300 max-w-lg mx-auto font-light leading-relaxed">
             Bring any photo from our portfolio to your consultation or let our master barbers tailor a custom profile for you.
           </p>
           <button
             onClick={() => onOpenBooking()}
-            className="px-8 py-3.5 rounded-xl text-xs font-bold uppercase tracking-wider bg-white text-black hover:bg-neutral-200 transition-all inline-flex items-center gap-2 shadow"
+            className="px-8 py-3.5 rounded-xl text-xs font-bold uppercase tracking-wider bg-gradient-to-r from-[#dfba73] via-[#c8a45d] to-[#9a7836] text-black hover:brightness-110 active:scale-95 transition-all inline-flex items-center gap-2 shadow-lg shadow-[#c8a45d]/20 font-display"
           >
             <Calendar className="w-4 h-4" />
             <span>Book Your Cut</span>

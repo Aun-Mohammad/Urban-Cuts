@@ -64,12 +64,12 @@ export const AdminLogin = ({ onLoginSuccess, onBackToSite }) => {
       </div>
 
       {/* Login Card */}
-      <div className="w-full max-w-md bg-[#101116] border border-[#22242c] rounded-3xl p-6 sm:p-8 shadow-2xl relative z-10">
+      <div className="w-full max-w-md leather-surface border border-[#c8a45d]/40 rounded-3xl p-6 sm:p-8 shadow-2xl shadow-black/90 relative z-10">
         {/* Header with Logo */}
         <div className="text-center mb-8 flex flex-col items-center">
-          <Logo size="md" showSubtitle={false} className="mb-3" />
+          <Logo size="md" variant="gold" showSubtitle={false} className="mb-3" />
           <h1 className="text-xl font-serif font-bold text-white tracking-wide flex items-center gap-2 justify-center">
-            <Lock className="w-4 h-4 text-neutral-400" />
+            <Lock className="w-4 h-4 text-[#dfba73]" />
             <span>Salon Admin Portal</span>
           </h1>
           <p className="text-xs text-neutral-400 mt-1">
@@ -88,7 +88,7 @@ export const AdminLogin = ({ onLoginSuccess, onBackToSite }) => {
         {/* Form */}
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="block text-[11px] font-bold uppercase tracking-wider text-neutral-300 mb-1.5">
+            <label className="block text-[11px] font-bold uppercase tracking-wider text-[#dfba73] mb-1.5 font-display">
               Username or Administrator ID
             </label>
             <div className="relative">
@@ -102,13 +102,13 @@ export const AdminLogin = ({ onLoginSuccess, onBackToSite }) => {
                 placeholder="admin"
                 autoComplete="username"
                 required
-                className="w-full pl-10 pr-4 py-3 rounded-xl bg-[#171920] border border-[#2c2f3b] focus:border-white focus:ring-1 focus:ring-white text-white text-sm outline-none transition-all placeholder:text-neutral-600"
+                className="w-full pl-10 pr-4 py-3 rounded-xl bg-[#090b10] border border-[#c8a45d]/30 focus:border-[#dfba73] focus:ring-1 focus:ring-[#dfba73]/30 text-white text-sm outline-none transition-all placeholder:text-neutral-600"
               />
             </div>
           </div>
 
           <div>
-            <label className="block text-[11px] font-bold uppercase tracking-wider text-neutral-300 mb-1.5">
+            <label className="block text-[11px] font-bold uppercase tracking-wider text-[#dfba73] mb-1.5 font-display">
               Password
             </label>
             <div className="relative">
@@ -122,7 +122,7 @@ export const AdminLogin = ({ onLoginSuccess, onBackToSite }) => {
                 placeholder="••••••••••••"
                 autoComplete="current-password"
                 required
-                className="w-full pl-10 pr-11 py-3 rounded-xl bg-[#171920] border border-[#2c2f3b] focus:border-white focus:ring-1 focus:ring-white text-white text-sm outline-none transition-all placeholder:text-neutral-600"
+                className="w-full pl-10 pr-11 py-3 rounded-xl bg-[#090b10] border border-[#c8a45d]/30 focus:border-[#dfba73] focus:ring-1 focus:ring-[#dfba73]/30 text-white text-sm outline-none transition-all placeholder:text-neutral-600"
               />
               <button
                 type="button"
@@ -141,7 +141,7 @@ export const AdminLogin = ({ onLoginSuccess, onBackToSite }) => {
                 type="checkbox"
                 checked={rememberMe}
                 onChange={(e) => setRememberMe(e.target.checked)}
-                className="w-4 h-4 rounded border-[#2c2f3b] bg-[#171920] text-white focus:ring-0 focus:ring-offset-0"
+                className="w-4 h-4 rounded border-[#c8a45d]/40 bg-[#090b10] text-[#dfba73] focus:ring-0 focus:ring-offset-0"
               />
               <span className="text-xs text-neutral-400">Remember this device</span>
             </label>
@@ -149,7 +149,7 @@ export const AdminLogin = ({ onLoginSuccess, onBackToSite }) => {
             <button
               type="button"
               onClick={handleQuickFill}
-              className="text-[11px] text-neutral-400 hover:text-white underline underline-offset-2 transition-colors"
+              className="text-[11px] text-[#dfba73] hover:underline underline-offset-2 transition-colors"
               title="Autofill default salon credentials"
             >
               Autofill Credentials
@@ -160,7 +160,7 @@ export const AdminLogin = ({ onLoginSuccess, onBackToSite }) => {
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full py-3.5 px-4 rounded-xl text-xs font-bold uppercase tracking-wider bg-white text-black hover:bg-neutral-200 transition-all flex items-center justify-center gap-2 shadow-lg shadow-white/5 active:scale-[0.99] disabled:opacity-50"
+              className="w-full py-3.5 px-4 rounded-xl text-xs font-bold uppercase tracking-wider bg-gradient-to-r from-[#dfba73] via-[#c8a45d] to-[#9a7836] text-black hover:brightness-110 transition-all flex items-center justify-center gap-2 shadow-lg shadow-[#c8a45d]/20 active:scale-[0.99] disabled:opacity-50"
             >
               <ShieldCheck className="w-4 h-4" />
               <span>{isLoading ? 'Authenticating...' : 'Sign In to Admin Panel'}</span>
@@ -169,13 +169,13 @@ export const AdminLogin = ({ onLoginSuccess, onBackToSite }) => {
         </form>
 
         {/* Credentials helper note for owner */}
-        <div className="mt-8 pt-6 border-t border-[#1c1e27] text-center">
-          <div className="p-3 rounded-xl bg-white/[0.03] border border-white/5 text-[11px] text-neutral-400">
+        <div className="mt-8 pt-6 border-t border-[#c8a45d]/20 text-center">
+          <div className="p-3 rounded-xl bg-white/[0.03] border border-[#c8a45d]/20 text-[11px] text-neutral-400">
             <p className="font-semibold text-neutral-300 mb-1">
               Default Owner Credentials:
             </p>
             <p className="font-mono text-neutral-300">
-              User: <span className="text-white font-bold">admin</span> • Pass: <span className="text-white font-bold">urbancuts2026</span>
+              User: <span className="text-[#dfba73] font-bold">admin</span> • Pass: <span className="text-[#dfba73] font-bold">urbancuts2026</span>
             </p>
             <p className="text-[10px] text-neutral-500 mt-1">
               (You can change this password inside the Admin Panel under Security)

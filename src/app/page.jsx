@@ -8,6 +8,7 @@ import { WhyChooseUs } from '../components/WhyChooseUs';
 import { HygienePledge } from '../components/HygienePledge';
 import { MapSection } from '../components/MapSection';
 import { FaqSection } from '../components/FaqSection';
+import { CraftsmanshipShowcase } from '../components/CraftsmanshipShowcase';
 import { JsonLd } from '../components/JsonLd';
 import { getHomeSchema } from '../data/schemas';
 import { 
@@ -39,43 +40,60 @@ export default function HomePage({ onNavigate, onOpenBooking }) {
         <JsonLd key={index} id={`home-schema-${index}`} schema={schema} />
       ))}
 
-      {/* 1. HERO SECTION - Monochrome & Silver Steel palette with exact Logo */}
-      <section className="relative pt-12 pb-16 sm:pt-12 sm:pb-28 overflow-hidden">
-        {/* Subtle geometric light glow behind logo */}
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-white/[0.03] blur-[120px] pointer-events-none rounded-full" />
+      {/* 1. HERO SECTION - Ultra-Luxurious Leather Texture & Burnished Gold Atelier Atmosphere */}
+      <section className="relative pt-10 pb-16 sm:pt-14 sm:pb-24 overflow-hidden leather-spotlight border-b border-[#c8a45d]/20">
+        {/* Artistic ambient radial glow & spotlight matching the reference image */}
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] sm:w-[850px] h-[450px] bg-[#dfba73]/[0.09] blur-[130px] pointer-events-none rounded-full" />
+        <div className="absolute top-1/2 left-1/4 w-[350px] h-[350px] bg-[#c8a45d]/[0.05] blur-[110px] pointer-events-none rounded-full" />
+
+        {/* Decorative corner gold hairline accents */}
+        <div className="absolute top-6 left-6 w-12 h-12 border-t border-l border-[#c8a45d]/30 pointer-events-none hidden sm:block" />
+        <div className="absolute top-6 right-6 w-12 h-12 border-t border-r border-[#c8a45d]/30 pointer-events-none hidden sm:block" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-8">
           
-          {/* Status Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/20 text-xs font-semibold text-neutral-200">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            <span>Open Daily Until Midnight • Zaraj Housing Society, Sector A</span>
+          {/* Artistic Status Badge */}
+          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#0a0c12]/90 border border-[#c8a45d]/40 text-xs font-semibold text-neutral-200 shadow-xl shadow-black/60 backdrop-blur-md">
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_rgba(52,211,153,0.8)]" />
+            <span className="font-display tracking-[0.18em] text-[11px] text-[#dfba73]">Atelier Open Daily Until Midnight</span>
+            <span className="text-[#c8a45d]/40">•</span>
+            <span className="text-neutral-300 font-sans">Zaraj Housing Society, Sector A</span>
           </div>
 
-          {/* Central Official Logo Presentation */}
-          <div className="py-2">
-            <Logo size="hero" showSubtitle={true} className="mx-auto" />
+          {/* Central Logo Presentation with Reference Image 3D Gold Leather Aesthetics */}
+          <div className="py-2 relative flex flex-col items-center justify-center">
+            {/* The Brand Mark with subtle gold ambient halo and drop shadow */}
+            <div className="relative group cursor-pointer transition-transform duration-500 hover:scale-[1.02]">
+              <div className="absolute -inset-4 bg-radial from-[#dfba73]/15 via-transparent to-transparent blur-2xl pointer-events-none rounded-full" />
+              <Logo size="hero" variant="gold" showSubtitle={false} className="mx-auto relative z-10" />
+            </div>
+
+            <div className="mt-3 flex items-center justify-center gap-3 text-xs tracking-[0.3em] uppercase font-display text-[#dfba73]">
+              <span className="w-8 h-[1px] bg-gradient-to-r from-transparent to-[#c8a45d]" />
+              <span>Atelier De Coiffure • Islamabad</span>
+              <span className="w-8 h-[1px] bg-gradient-to-l from-transparent to-[#c8a45d]" />
+            </div>
           </div>
 
           {/* Headline & Subheadline */}
-          <div className="max-w-3xl mx-auto space-y-4">
+          <div className="max-w-4xl mx-auto space-y-4">
             <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight uppercase leading-[1.1]">
               {businessInfo.heroHeadline || "Precision Fades. Sharp Beard Lines."}{" "}
-              <span className="text-neutral-400 font-normal block sm:inline">
+              <span className="gold-gradient-text font-artistic italic lowercase capitalize tracking-normal block sm:inline font-bold">
                 {businessInfo.heroHighlight || "In Zaraj Housing Society, Islamabad."}
               </span>
             </h1>
 
-            <p className="text-sm sm:text-base text-neutral-300 leading-relaxed max-w-2xl mx-auto">
+            <p className="text-sm sm:text-base text-neutral-300 leading-relaxed max-w-2xl mx-auto font-light">
               {businessInfo.heroSubheadline}
             </p>
           </div>
 
-          {/* High-Contrast Conversion CTAs */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
+          {/* High-Contrast Luxury Conversion CTAs */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 pt-2">
             <button
               onClick={() => onOpenBooking()}
-              className="w-full sm:w-auto px-8 py-4 rounded-xl text-xs sm:text-sm font-bold tracking-wider uppercase bg-white text-black hover:bg-neutral-200 transition-all shadow-xl shadow-white/5 flex items-center justify-center gap-2.5 active:scale-[0.98]"
+              className="w-full sm:w-auto px-8 py-4 rounded-xl text-xs sm:text-sm font-bold tracking-widest uppercase bg-gradient-to-r from-[#dfba73] via-[#c8a45d] to-[#9a7836] text-black hover:brightness-110 transition-all shadow-xl shadow-[#c8a45d]/25 flex items-center justify-center gap-2.5 active:scale-[0.98]"
             >
               <Calendar className="w-4 h-4" />
               <span>Book Appointment</span>
@@ -85,7 +103,7 @@ export default function HomePage({ onNavigate, onOpenBooking }) {
               href={`https://wa.me/${businessInfo.whatsapp.replace(/[^0-9]/g, '')}?text=${encodeURIComponent("Hi Urban Cuts, I would like to book a grooming appointment.")}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto px-7 py-4 rounded-xl text-xs sm:text-sm font-bold tracking-wider uppercase bg-[#14151a] hover:bg-[#1c1e24] text-white border border-[#272a33] transition-all flex items-center justify-center gap-2.5"
+              className="w-full sm:w-auto px-7 py-4 rounded-xl text-xs sm:text-sm font-bold tracking-wider uppercase bg-[#11131a] hover:bg-[#181a24] text-white border border-[#c8a45d]/30 hover:border-[#c8a45d]/60 transition-all flex items-center justify-center gap-2.5 shadow-lg shadow-black/40"
             >
               <MessageSquare className="w-4 h-4 text-emerald-400" />
               <span>WhatsApp Us</span>
@@ -93,27 +111,27 @@ export default function HomePage({ onNavigate, onOpenBooking }) {
 
             <a
               href={`tel:${businessInfo.phone}`}
-              className="w-full sm:w-auto px-7 py-4 rounded-xl text-xs sm:text-sm font-bold tracking-wider uppercase bg-transparent hover:bg-white/5 text-neutral-300 hover:text-white transition-all flex items-center justify-center gap-2"
+              className="w-full sm:w-auto px-7 py-4 rounded-xl text-xs sm:text-sm font-bold tracking-wider uppercase bg-transparent hover:bg-white/5 text-neutral-300 hover:text-white border border-transparent hover:border-white/15 transition-all flex items-center justify-center gap-2"
             >
-              <Phone className="w-4 h-4" />
+              <Phone className="w-4 h-4 text-[#dfba73]" />
               <span>{businessInfo.phone}</span>
             </a>
           </div>
 
-          {/* Micro-Trust Elements */}
+          {/* Micro-Trust Elements with Artistic Gold Accents */}
           <div className="pt-4 flex flex-wrap items-center justify-center gap-6 text-xs text-neutral-400">
-            <span className="flex items-center gap-1.5 text-neutral-300">
-              <Star className="w-4 h-4 text-white fill-white" />
+            <span className="flex items-center gap-1.5 text-neutral-200">
+              <Star className="w-4 h-4 text-[#dfba73] fill-[#dfba73]" />
               <strong className="text-white">5.0 Star Rated</strong> (42+ Verified Google Reviews)
             </span>
-            <span>•</span>
+            <span className="text-white/20">•</span>
             <span className="flex items-center gap-1.5">
-              <ShieldCheck className="w-4 h-4 text-neutral-300" />
+              <ShieldCheck className="w-4 h-4 text-[#dfba73]" />
               Sterilized Tools Every Client
             </span>
-            <span>•</span>
+            <span className="text-white/20">•</span>
             <span className="flex items-center gap-1.5">
-              <CheckCircle className="w-4 h-4 text-neutral-300" />
+              <CheckCircle className="w-4 h-4 text-[#dfba73]" />
               Walk-Ins Welcomed
             </span>
           </div>
@@ -123,13 +141,19 @@ export default function HomePage({ onNavigate, onOpenBooking }) {
       {/* 2. TRUST STRIP */}
       <TrustStrip />
 
-      {/* 3. SIGNATURE SERVICES TEASER */}
+      {/* 3. CRAFTSMANSHIP SHOWCASE (Video & Carousel behind Craftsmanship text) */}
+      <CraftsmanshipShowcase
+        onOpenBooking={onOpenBooking}
+        onNavigate={onNavigate}
+      />
+
+      {/* 4. SIGNATURE SERVICES TEASER */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-[#22242c] pb-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-[#c8a45d]/20 pb-6">
           <div className="space-y-2">
-            <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-white/5 text-[11px] font-bold text-neutral-300 uppercase tracking-widest">
-              <Scissors className="w-3 h-3 text-white" />
-              <span>Craftsmanship</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#171a24] border border-[#c8a45d]/30 text-[11px] font-bold text-[#dfba73] uppercase tracking-widest font-display">
+              <Scissors className="w-3 h-3 text-[#dfba73]" />
+              <span>Artisanal Menu</span>
             </div>
             <h2 className="font-serif text-2xl sm:text-4xl font-black text-white tracking-tight uppercase">
               Precision Barbering & Hair Care
@@ -141,7 +165,7 @@ export default function HomePage({ onNavigate, onOpenBooking }) {
 
           <button
             onClick={() => onNavigate('services')}
-            className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-white hover:text-neutral-300 transition-colors group"
+            className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#dfba73] hover:text-white transition-colors group"
           >
             <span>View Full Menu (8+ Services)</span>
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />

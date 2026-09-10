@@ -27,13 +27,16 @@ export default function AboutPage({ onNavigate, onOpenBooking }) {
       {/* 1. HERO STORY */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/20 text-xs font-bold text-neutral-300">
-            <Scissors className="w-3.5 h-3.5 text-white" />
-            <span>The Urban Cuts Standard</span>
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#171a24] border border-[#c8a45d]/30 text-xs font-bold text-[#dfba73]">
+            <Scissors className="w-3.5 h-3.5 text-[#dfba73]" />
+            <span className="font-display uppercase tracking-widest text-[11px]">Atelier Zaraj • Sector A</span>
           </div>
 
-          <h1 className="font-serif text-3xl sm:text-5xl font-black text-white tracking-tight uppercase">
-            Craftsmanship. Clinical Hygiene. Honest Hospitality.
+          <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight uppercase leading-[1.1]">
+            Master Barbering in <br className="hidden sm:inline" />
+            <span className="gold-gradient-text font-artistic italic capitalize tracking-normal text-4xl sm:text-6xl block sm:inline">
+              Zaraj Housing Society, Islamabad.
+            </span>
           </h1>
 
           <p className="text-sm sm:text-base text-neutral-300 leading-relaxed">
@@ -43,22 +46,22 @@ export default function AboutPage({ onNavigate, onOpenBooking }) {
 
         {/* Story Grid */}
         <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-          <div className="space-y-4 text-xs sm:text-sm text-neutral-300 leading-relaxed bg-[#121317] border border-[#22242c] p-6 sm:p-8 rounded-3xl">
+          <div className="space-y-4 text-xs sm:text-sm text-neutral-300 leading-relaxed leather-surface border border-[#c8a45d]/25 p-6 sm:p-8 rounded-3xl shadow-xl">
             <h3 className="font-serif text-2xl font-bold text-white">
               A Barbershop Built on Precision, Not Speed
             </h3>
-            <p>
+            <p className="font-light">
               In an industry that frequently rushes clients through the chair in fifteen minutes, Urban Cuts was founded with a completely different mindset: <em>every cut is a custom craft piece.</em>
             </p>
-            <p>
+            <p className="font-light">
               When you sit in our chair, your barber starts with an active consultation—evaluating your jawline, cheek structure, hair density, and daily styling routine. Whether it's a skin taper, a classic scissor trim, or beard line-up, our cuts are engineered to grow out gracefully.
             </p>
-            <p>
+            <p className="font-light">
               Operating 7 days a week until midnight, we ensure hard-working professionals can enjoy a relaxing grooming session without weekend rush or daytime scheduling stress.
             </p>
           </div>
 
-          <div className="rounded-3xl overflow-hidden border border-[#22242c] shadow-2xl relative aspect-[4/3] bg-[#090a0c]">
+          <div className="rounded-3xl overflow-hidden border border-[#c8a45d]/25 shadow-2xl relative aspect-[4/3] bg-[#090a0c]">
             <img
               src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1000&q=80"
               alt="Urban Cuts Men's Salon Interior Zaraj Islamabad"
@@ -66,7 +69,7 @@ export default function AboutPage({ onNavigate, onOpenBooking }) {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-6">
               <div className="space-y-1">
-                <span className="text-[10px] uppercase font-bold tracking-widest text-neutral-300">Sanctuary</span>
+                <span className="text-[10px] uppercase font-bold tracking-widest text-[#dfba73] font-display">Artisanal Sanctuary</span>
                 <p className="font-serif text-lg font-bold text-white">Street 2 B, Zaraj Housing Society, Sector A</p>
               </div>
             </div>
@@ -77,32 +80,32 @@ export default function AboutPage({ onNavigate, onOpenBooking }) {
       {/* 2. THREE CORE PILLARS */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-[#121317] border border-[#22242c] p-6 rounded-2xl space-y-3">
-            <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-white">
+          <div className="leather-surface border border-[#c8a45d]/20 p-6 rounded-2xl space-y-3 hover:border-[#c8a45d]/50 transition-all">
+            <div className="w-10 h-10 rounded-xl bg-[#141722] border border-[#c8a45d]/30 flex items-center justify-center text-[#dfba73] shadow-sm">
               <Scissors className="w-5 h-5" />
             </div>
-            <h4 className="font-serif text-lg font-bold text-white uppercase">Tailored Scissor & Fade Work</h4>
-            <p className="text-xs text-neutral-400 leading-relaxed">
+            <h4 className="font-serif text-lg font-bold text-white uppercase tracking-wide">Tailored Scissor & Fade Work</h4>
+            <p className="text-xs text-neutral-300 leading-relaxed font-light">
               No generic clippering. We balance textures, crown cowlicks, and head shape for a balanced aesthetic that lasts for weeks.
             </p>
           </div>
 
-          <div className="bg-[#121317] border border-[#22242c] p-6 rounded-2xl space-y-3">
-            <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-white">
+          <div className="leather-surface border border-[#c8a45d]/20 p-6 rounded-2xl space-y-3 hover:border-[#c8a45d]/50 transition-all">
+            <div className="w-10 h-10 rounded-xl bg-[#141722] border border-[#c8a45d]/30 flex items-center justify-center text-[#dfba73] shadow-sm">
               <ShieldCheck className="w-5 h-5" />
             </div>
-            <h4 className="font-serif text-lg font-bold text-white uppercase">Clinical Hygiene Protocol</h4>
-            <p className="text-xs text-neutral-400 leading-relaxed">
+            <h4 className="font-serif text-lg font-bold text-white uppercase tracking-wide">Clinical Hygiene Protocol</h4>
+            <p className="text-xs text-neutral-300 leading-relaxed font-light">
               Medical-grade autoclave sterilization, fresh disposable neck strips, and single-use razors. Your health is our highest priority.
             </p>
           </div>
 
-          <div className="bg-[#121317] border border-[#22242c] p-6 rounded-2xl space-y-3">
-            <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-white">
+          <div className="leather-surface border border-[#c8a45d]/20 p-6 rounded-2xl space-y-3 hover:border-[#c8a45d]/50 transition-all">
+            <div className="w-10 h-10 rounded-xl bg-[#141722] border border-[#c8a45d]/30 flex items-center justify-center text-[#dfba73] shadow-sm">
               <HeartHandshake className="w-5 h-5" />
             </div>
-            <h4 className="font-serif text-lg font-bold text-white uppercase">Respectful Client Experience</h4>
-            <p className="text-xs text-neutral-400 leading-relaxed">
+            <h4 className="font-serif text-lg font-bold text-white uppercase tracking-wide">Respectful Client Experience</h4>
+            <p className="text-xs text-neutral-300 leading-relaxed font-light">
               Warm hospitality, complimentary beverages, curated relaxing ambience, and barbers who actively listen to what you want.
             </p>
           </div>

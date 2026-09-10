@@ -96,19 +96,19 @@ export const AdminPanel = ({ isOpen, onClose, onContentSaved, onLogout }) => {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/80 backdrop-blur-md overflow-y-auto">
-      <div className="bg-[#0f1014] border border-[#2c2f3b] rounded-3xl w-full max-w-5xl max-h-[92vh] flex flex-col shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/90 backdrop-blur-md overflow-y-auto">
+      <div className="leather-surface border border-[#c8a45d]/40 rounded-3xl w-full max-w-5xl max-h-[92vh] flex flex-col shadow-2xl shadow-black/95 overflow-hidden animate-in fade-in zoom-in-95 duration-200 relative">
         
         {/* Modal Header */}
-        <div className="p-5 sm:p-6 border-b border-[#22242c] flex items-center justify-between bg-[#14161c]">
+        <div className="p-5 sm:p-6 border-b border-[#c8a45d]/25 flex items-center justify-between bg-[#080a0f]/80">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center text-white">
+            <div className="w-10 h-10 rounded-xl bg-[#141722] border border-[#c8a45d]/40 flex items-center justify-center text-[#dfba73]">
               <Settings className="w-5 h-5" />
             </div>
             <div>
               <h2 className="font-serif text-lg sm:text-xl font-bold text-white flex items-center gap-2">
                 <span>Urban Cuts Admin & Content Management</span>
-                <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-white text-black">
+                <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-gradient-to-r from-[#dfba73] via-[#c8a45d] to-[#9a7836] text-black">
                   Live CMS
                 </span>
               </h2>
@@ -129,7 +129,7 @@ export const AdminPanel = ({ isOpen, onClose, onContentSaved, onLogout }) => {
             </button>
             <button
               onClick={onClose}
-              className="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-neutral-400 hover:text-white transition-colors"
+              className="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-neutral-400 hover:text-white border border-white/10 hover:border-[#c8a45d]/40 transition-colors"
               title="Return to Website"
             >
               <X className="w-5 h-5" />
@@ -138,13 +138,13 @@ export const AdminPanel = ({ isOpen, onClose, onContentSaved, onLogout }) => {
         </div>
 
         {/* Tab Navigation */}
-        <div className="flex border-b border-[#22242c] bg-[#0b0c0e] px-4 sm:px-6 overflow-x-auto gap-2 py-2.5">
+        <div className="flex border-b border-[#c8a45d]/20 bg-[#080a0f]/60 px-4 sm:px-6 overflow-x-auto gap-2 py-2.5">
           <button
             onClick={() => setActiveTab('meta')}
             className={`px-4 py-2 rounded-xl text-xs font-semibold flex items-center gap-2 transition-all whitespace-nowrap ${
               activeTab === 'meta'
-                ? 'bg-white text-black font-bold shadow'
-                : 'text-neutral-400 hover:text-white hover:bg-white/5'
+                ? 'bg-gradient-to-r from-[#dfba73] via-[#c8a45d] to-[#9a7836] text-black font-bold shadow-md shadow-[#c8a45d]/20'
+                : 'text-neutral-400 hover:text-[#dfba73] hover:bg-white/5'
             }`}
           >
             <Globe className="w-4 h-4" />
@@ -155,8 +155,8 @@ export const AdminPanel = ({ isOpen, onClose, onContentSaved, onLogout }) => {
             onClick={() => setActiveTab('business')}
             className={`px-4 py-2 rounded-xl text-xs font-semibold flex items-center gap-2 transition-all whitespace-nowrap ${
               activeTab === 'business'
-                ? 'bg-white text-black font-bold shadow'
-                : 'text-neutral-400 hover:text-white hover:bg-white/5'
+                ? 'bg-gradient-to-r from-[#dfba73] via-[#c8a45d] to-[#9a7836] text-black font-bold shadow-md shadow-[#c8a45d]/20'
+                : 'text-neutral-400 hover:text-[#dfba73] hover:bg-white/5'
             }`}
           >
             <FileText className="w-4 h-4" />
@@ -167,8 +167,8 @@ export const AdminPanel = ({ isOpen, onClose, onContentSaved, onLogout }) => {
             onClick={() => setActiveTab('services')}
             className={`px-4 py-2 rounded-xl text-xs font-semibold flex items-center gap-2 transition-all whitespace-nowrap ${
               activeTab === 'services'
-                ? 'bg-white text-black font-bold shadow'
-                : 'text-neutral-400 hover:text-white hover:bg-white/5'
+                ? 'bg-gradient-to-r from-[#dfba73] via-[#c8a45d] to-[#9a7836] text-black font-bold shadow-md shadow-[#c8a45d]/20'
+                : 'text-neutral-400 hover:text-[#dfba73] hover:bg-white/5'
             }`}
           >
             <Scissors className="w-4 h-4" />
@@ -631,7 +631,7 @@ export const AdminPanel = ({ isOpen, onClose, onContentSaved, onLogout }) => {
         </div>
 
         {/* Modal Footer Controls */}
-        <div className="p-4 sm:p-6 border-t border-[#22242c] bg-[#121318] flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div className="p-4 sm:p-6 border-t border-[#c8a45d]/20 bg-[#080a0f]/90 flex flex-col sm:flex-row items-center justify-between gap-3">
           <div className="flex items-center gap-2">
             <button
               onClick={handleReset}
@@ -641,8 +641,8 @@ export const AdminPanel = ({ isOpen, onClose, onContentSaved, onLogout }) => {
               <span>Reset to Defaults</span>
             </button>
             {saveSuccess && (
-              <span className="text-xs text-emerald-400 font-bold flex items-center gap-1">
-                <Check className="w-4 h-4" />
+              <span className="text-xs text-[#dfba73] font-bold flex items-center gap-1 font-display">
+                <Check className="w-4 h-4 text-emerald-400" />
                 Live Content & Meta Tags Updated!
               </span>
             )}
@@ -651,13 +651,13 @@ export const AdminPanel = ({ isOpen, onClose, onContentSaved, onLogout }) => {
           <div className="flex items-center gap-3 w-full sm:w-auto">
             <button
               onClick={onClose}
-              className="flex-1 sm:flex-none px-5 py-2.5 rounded-xl text-xs font-semibold bg-white/5 border border-neutral-700 text-neutral-300 hover:text-white"
+              className="flex-1 sm:flex-none px-5 py-2.5 rounded-xl text-xs font-semibold bg-white/5 border border-white/10 text-neutral-300 hover:text-white"
             >
               Cancel
             </button>
             <button
               onClick={handleSaveAll}
-              className="flex-1 sm:flex-none px-6 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider bg-white text-black hover:bg-neutral-200 transition-all flex items-center justify-center gap-2 shadow-lg shadow-white/10"
+              className="flex-1 sm:flex-none px-6 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider bg-gradient-to-r from-[#dfba73] via-[#c8a45d] to-[#9a7836] text-black hover:brightness-110 transition-all flex items-center justify-center gap-2 shadow-lg shadow-[#c8a45d]/20 active:scale-95"
             >
               <Save className="w-4 h-4" />
               <span>Save & Apply Changes</span>

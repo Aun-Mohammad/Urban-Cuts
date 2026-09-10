@@ -15,71 +15,73 @@ export const ServiceCard = ({ service, onOpenBooking, onBook }) => {
   };
 
   return (
-    <div className="bg-[#121317] border border-[#22242c] rounded-2xl overflow-hidden shadow-xl flex flex-col justify-between hover:border-neutral-400/50 hover:bg-[#16181e] transition-all duration-300 group">
+    <div className="bg-[#0e1017] border border-[#c8a45d]/20 rounded-2xl overflow-hidden shadow-xl flex flex-col justify-between hover:border-[#c8a45d]/50 hover:bg-[#131622] hover:shadow-2xl hover:shadow-black/60 transition-all duration-300 group">
       <div>
         {/* Service Media */}
-        <div className="aspect-[16/10] overflow-hidden relative bg-[#090a0c]">
+        <div className="aspect-[16/10] overflow-hidden relative bg-[#07080a]">
           <img
             src={service.image}
             alt={`${service.name} - Urban Cuts Islamabad`}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 brightness-90 group-hover:brightness-100"
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-90 group-hover:brightness-100"
             loading="lazy"
           />
-          <div className="absolute top-3 left-3 bg-black/85 backdrop-blur-sm px-2.5 py-1 rounded text-[10px] uppercase font-bold tracking-wider text-white border border-[#262832]">
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0e1017] via-transparent to-transparent opacity-80" />
+          
+          <div className="absolute top-3 left-3 bg-black/90 backdrop-blur-md px-3 py-1 rounded-full text-[10px] uppercase font-bold tracking-widest text-[#dfba73] border border-[#c8a45d]/35 font-display shadow-sm">
             {service.category}
           </div>
-          <div className="absolute top-3 right-3 bg-black/85 backdrop-blur-sm px-2.5 py-1 rounded text-xs font-mono text-neutral-300 border border-[#262832] flex items-center gap-1">
-            <Clock className="w-3 h-3 text-white" />
+          <div className="absolute top-3 right-3 bg-black/90 backdrop-blur-md px-2.5 py-1 rounded-full text-xs font-mono text-neutral-300 border border-[#c8a45d]/25 flex items-center gap-1 shadow-sm">
+            <Clock className="w-3 h-3 text-[#dfba73]" />
             <span>{service.duration}</span>
           </div>
         </div>
 
         {/* Details */}
         <div className="p-6 space-y-3.5">
-          <h3 className="font-serif text-xl font-bold text-white group-hover:text-neutral-100 tracking-wide">
+          <h3 className="font-serif text-xl font-bold text-white group-hover:text-[#dfba73] transition-colors tracking-wide">
             {service.name}
           </h3>
 
-          <p className="text-xs text-neutral-300 leading-relaxed">
+          <p className="text-xs text-neutral-300 leading-relaxed font-light">
             {service.shortDesc}
           </p>
 
           {/* Benefit Box */}
-          <div className="p-3 rounded-xl bg-[#0a0b0d] border border-[#22242c] text-xs">
-            <span className="text-[10px] uppercase font-bold tracking-wider text-neutral-300 flex items-center gap-1 mb-1">
-              <Check className="w-3 h-3 text-white" />
-              Benefit
+          <div className="p-3.5 rounded-xl bg-[#08090d] border border-[#c8a45d]/20 text-xs">
+            <span className="text-[10px] uppercase font-bold tracking-widest text-[#dfba73] flex items-center gap-1.5 mb-1 font-display">
+              <Check className="w-3 h-3 text-[#dfba73]" />
+              Artisanal Standard
             </span>
-            <p className="text-neutral-300 italic font-normal">
+            <p className="text-neutral-300 italic font-artistic text-sm">
               "{service.benefit}"
             </p>
           </div>
 
           <div className="flex items-center justify-between text-xs text-neutral-400 pt-1">
-            <span>Rates:</span>
-            <span className="font-medium text-white">{service.priceNote}</span>
+            <span className="font-display tracking-wider text-[11px] uppercase">Session Tier:</span>
+            <span className="font-semibold text-[#dfba73] font-mono">{service.priceNote}</span>
           </div>
         </div>
       </div>
 
       {/* Action Footer */}
-      <div className="p-6 pt-0 border-t border-[#22242c]/60 mt-4 flex items-center gap-3">
+      <div className="p-6 pt-0 border-t border-white/5 mt-4 flex items-center gap-3">
         <a
           href={`https://wa.me/923164233912?text=${encodeURIComponent(`Hi Urban Cuts, I want to book: ${service.name}`)}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="p-2.5 rounded-xl bg-[#1d1f27] border border-[#333644] text-neutral-200 hover:text-white hover:bg-neutral-800 transition-colors"
+          className="p-2.5 rounded-xl bg-[#141722] border border-[#c8a45d]/25 text-neutral-300 hover:text-white hover:border-[#c8a45d]/50 transition-colors shadow-sm"
           title="WhatsApp Quick Inquiry"
         >
-          <MessageSquare className="w-4 h-4" />
+          <MessageSquare className="w-4 h-4 text-emerald-400" />
         </a>
 
         <button
           onClick={handleBooking}
-          className="flex-1 py-2.5 px-4 rounded-xl text-xs font-bold uppercase tracking-wider bg-white text-black hover:bg-neutral-200 active:scale-95 transition-all shadow-md shadow-white/5 flex items-center justify-center gap-2"
+          className="flex-1 py-2.5 px-4 rounded-xl text-xs font-bold uppercase tracking-wider bg-gradient-to-r from-[#dfba73] via-[#c8a45d] to-[#9a7836] text-black hover:brightness-110 active:scale-95 transition-all shadow-md shadow-[#c8a45d]/15 flex items-center justify-center gap-2"
         >
           <Calendar className="w-3.5 h-3.5" />
-          <span>Book This Service</span>
+          <span>Book Session</span>
         </button>
       </div>
     </div>

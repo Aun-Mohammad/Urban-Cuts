@@ -54,62 +54,70 @@ export const BookingModal = ({ isOpen, onClose, defaultServiceId }) => {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/85 backdrop-blur-md overflow-y-auto">
-      <div className="bg-[#0f1014] border border-[#2c2f3b] rounded-3xl w-full max-w-xl max-h-[92vh] flex flex-col shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/90 backdrop-blur-md overflow-y-auto">
+      <div className="leather-surface border border-[#c8a45d]/40 rounded-3xl w-full max-w-xl max-h-[92vh] flex flex-col shadow-2xl shadow-black/90 overflow-hidden animate-in fade-in zoom-in-95 duration-200 relative">
         
+        {/* Subtle Ambient Gold Glow */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-80 h-32 bg-[#dfba73]/10 blur-3xl pointer-events-none rounded-full" />
+
         {/* Header */}
-        <div className="p-5 sm:p-6 border-b border-[#22242c] flex items-center justify-between bg-[#14161c]">
+        <div className="p-5 sm:p-6 border-b border-[#c8a45d]/20 flex items-center justify-between bg-[#080a0f]/80 relative z-10">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center text-white shrink-0">
+            <div className="w-10 h-10 rounded-xl bg-[#141722] border border-[#c8a45d]/40 flex items-center justify-center text-[#dfba73] shrink-0 shadow-sm shadow-[#c8a45d]/10">
               <Scissors className="w-5 h-5" />
             </div>
             <div>
-              <h2 className="font-serif text-xl font-bold text-white">
-                Book Your Grooming Session
-              </h2>
-              <p className="text-xs text-neutral-400">
-                Urban Cuts • Zaraj Housing Society, Sector A, Islamabad
+              <div className="flex items-center gap-2">
+                <h2 className="font-serif text-lg sm:text-xl font-bold text-white tracking-wide">
+                  Reserve Atelier Session
+                </h2>
+                <span className="hidden sm:inline-block text-[9px] uppercase font-bold tracking-[0.2em] px-2 py-0.5 rounded-full bg-[#c8a45d]/15 border border-[#c8a45d]/35 text-[#dfba73] font-display">
+                  Zaraj Sector A
+                </span>
+              </div>
+              <p className="text-xs text-neutral-400 font-light">
+                Urban Cuts • Street 2 B, Sector A, Islamabad
               </p>
             </div>
           </div>
 
           <button
             onClick={onClose}
-            className="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-neutral-400 hover:text-white transition-colors"
+            className="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-neutral-400 hover:text-white border border-white/10 hover:border-[#c8a45d]/40 transition-colors"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
 
         {/* Content Body */}
-        <div className="flex-1 overflow-y-auto p-5 sm:p-6 space-y-5">
+        <div className="flex-1 overflow-y-auto p-5 sm:p-6 space-y-5 relative z-10">
           {isSuccess ? (
             <div className="py-8 text-center space-y-4">
-              <div className="w-14 h-14 rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center mx-auto text-emerald-400">
+              <div className="w-16 h-16 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center mx-auto text-emerald-400 shadow-lg shadow-emerald-950/40">
                 <CheckCircle className="w-8 h-8" />
               </div>
-              <h3 className="font-serif text-2xl font-bold text-white">Booking Request Prepared!</h3>
-              <p className="text-xs sm:text-sm text-neutral-300 max-w-md mx-auto leading-relaxed">
-                Thank you, <strong className="text-white">{fullName || 'Sir'}</strong>. Your appointment for <strong className="text-white">{currentServiceObj?.name}</strong> has been logged.
+              <h3 className="font-serif text-2xl font-bold text-white">Grooming Request Prepared</h3>
+              <p className="text-xs sm:text-sm text-neutral-300 max-w-md mx-auto leading-relaxed font-light">
+                Thank you, <strong className="text-white font-semibold">{fullName || 'Sir'}</strong>. Your appointment for <strong className="text-[#dfba73] font-semibold">{currentServiceObj?.name}</strong> has been prepared.
               </p>
               <p className="text-xs text-neutral-400 max-w-sm mx-auto">
-                For immediate confirmation, you can send your booking directly to our front desk on WhatsApp below:
+                For priority chair confirmation, dispatch your booking directly to our reception via WhatsApp below:
               </p>
 
-              <div className="pt-3 flex flex-col sm:flex-row gap-3 justify-center">
+              <div className="pt-4 flex flex-col sm:flex-row gap-3 justify-center">
                 <button
                   onClick={handleWhatsAppDirect}
-                  className="px-6 py-3 rounded-xl text-xs font-bold uppercase tracking-wider bg-emerald-600 hover:bg-emerald-500 text-white flex items-center justify-center gap-2 shadow-lg"
+                  className="px-6 py-3.5 rounded-xl text-xs font-bold uppercase tracking-wider bg-emerald-600 hover:bg-emerald-500 text-white flex items-center justify-center gap-2 shadow-lg shadow-emerald-950/50 active:scale-95 transition-all"
                 >
                   <MessageSquare className="w-4 h-4" />
-                  <span>Send Confirmation on WhatsApp</span>
+                  <span>Transmit to WhatsApp Desk</span>
                 </button>
                 <button
                   onClick={() => {
                     setIsSuccess(false);
                     onClose();
                   }}
-                  className="px-5 py-3 rounded-xl text-xs font-semibold bg-white/5 border border-neutral-700 text-neutral-300 hover:text-white"
+                  className="px-5 py-3.5 rounded-xl text-xs font-semibold bg-[#111319] border border-[#c8a45d]/30 text-neutral-300 hover:text-white transition-colors"
                 >
                   Done
                 </button>
@@ -120,22 +128,22 @@ export const BookingModal = ({ isOpen, onClose, defaultServiceId }) => {
               
               {/* Service Selection */}
               <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-neutral-300 mb-1.5">
-                  Select Service <span className="text-white">*</span>
+                <label className="block text-xs font-bold uppercase tracking-wider text-[#dfba73] mb-1.5 font-display">
+                  Select Service Tier <span className="text-[#dfba73]">*</span>
                 </label>
                 <select
                   value={selectedService}
                   onChange={(e) => setSelectedService(e.target.value)}
-                  className="w-full px-3.5 py-2.5 rounded-xl bg-[#171920] border border-[#2c2f3b] text-white text-sm focus:outline-none focus:border-white"
+                  className="w-full px-3.5 py-2.5 rounded-xl bg-[#090b10] border border-[#c8a45d]/30 text-white text-sm focus:outline-none focus:border-[#dfba73] focus:ring-1 focus:ring-[#dfba73]/30 transition-all cursor-pointer"
                 >
                   {services.map((srv) => (
-                    <option key={srv.id} value={srv.id}>
-                      {srv.name} ({srv.duration})
+                    <option key={srv.id} value={srv.id} className="bg-[#090b10] text-white py-1">
+                      {srv.name} — {srv.priceNote || srv.price} ({srv.duration})
                     </option>
                   ))}
                 </select>
                 {currentServiceObj && (
-                  <p className="text-[11px] text-neutral-400 mt-1 italic">
+                  <p className="text-[11px] text-neutral-300 mt-1.5 italic font-artistic">
                     "{currentServiceObj.benefit}"
                   </p>
                 )}
@@ -143,8 +151,8 @@ export const BookingModal = ({ isOpen, onClose, defaultServiceId }) => {
 
               {/* Stylist Selection */}
               <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-neutral-300 mb-1.5">
-                  Preferred Stylist
+                <label className="block text-xs font-bold uppercase tracking-wider text-[#dfba73] mb-1.5 font-display">
+                  Dedicated Artisan
                 </label>
                 <div className="grid grid-cols-3 gap-2">
                   <button
@@ -152,11 +160,11 @@ export const BookingModal = ({ isOpen, onClose, defaultServiceId }) => {
                     onClick={() => setSelectedStylist('any')}
                     className={`py-2 px-3 rounded-xl text-xs font-semibold border transition-all text-center ${
                       selectedStylist === 'any'
-                        ? 'bg-white text-black border-white font-bold'
-                        : 'bg-[#171920] text-neutral-300 border-[#2c2f3b] hover:border-neutral-500'
+                        ? 'bg-gradient-to-r from-[#dfba73] via-[#c8a45d] to-[#9a7836] text-black border-transparent font-bold shadow-md shadow-[#c8a45d]/20'
+                        : 'bg-[#090b10] text-neutral-300 border-[#c8a45d]/25 hover:border-[#c8a45d]/60 hover:text-white'
                     }`}
                   >
-                    Any Barber
+                    Any Artisan
                   </button>
                   {team.map((stylist) => (
                     <button
@@ -165,8 +173,8 @@ export const BookingModal = ({ isOpen, onClose, defaultServiceId }) => {
                       onClick={() => setSelectedStylist(stylist.id)}
                       className={`py-2 px-3 rounded-xl text-xs font-semibold border transition-all text-center ${
                         selectedStylist === stylist.id
-                          ? 'bg-white text-black border-white font-bold'
-                          : 'bg-[#171920] text-neutral-300 border-[#2c2f3b] hover:border-neutral-500'
+                          ? 'bg-gradient-to-r from-[#dfba73] via-[#c8a45d] to-[#9a7836] text-black border-transparent font-bold shadow-md shadow-[#c8a45d]/20'
+                          : 'bg-[#090b10] text-neutral-300 border-[#c8a45d]/25 hover:border-[#c8a45d]/60 hover:text-white'
                       }`}
                     >
                       {stylist.name}
@@ -179,7 +187,7 @@ export const BookingModal = ({ isOpen, onClose, defaultServiceId }) => {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
                   <label className="block text-xs font-bold uppercase tracking-wider text-neutral-300 mb-1">
-                    Your Name <span className="text-white">*</span>
+                    Your Name <span className="text-[#dfba73]">*</span>
                   </label>
                   <input
                     type="text"
@@ -187,13 +195,13 @@ export const BookingModal = ({ isOpen, onClose, defaultServiceId }) => {
                     placeholder="e.g. Asad Rehman"
                     value={fullName}
                     onChange={(e) => setFullName(e.target.value)}
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-[#171920] border border-[#2c2f3b] text-white text-sm focus:outline-none focus:border-white"
+                    className="w-full px-3.5 py-2.5 rounded-xl bg-[#090b10] border border-[#c8a45d]/25 text-white text-sm placeholder:text-neutral-600 focus:outline-none focus:border-[#dfba73] focus:ring-1 focus:ring-[#dfba73]/30 transition-all"
                   />
                 </div>
 
                 <div>
                   <label className="block text-xs font-bold uppercase tracking-wider text-neutral-300 mb-1">
-                    Phone / WhatsApp <span className="text-white">*</span>
+                    Phone / WhatsApp <span className="text-[#dfba73]">*</span>
                   </label>
                   <input
                     type="tel"
@@ -201,7 +209,7 @@ export const BookingModal = ({ isOpen, onClose, defaultServiceId }) => {
                     placeholder="03XX XXXXXXX"
                     value={phoneNumber}
                     onChange={(e) => setPhoneNumber(e.target.value)}
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-[#171920] border border-[#2c2f3b] text-white text-sm focus:outline-none focus:border-white"
+                    className="w-full px-3.5 py-2.5 rounded-xl bg-[#090b10] border border-[#c8a45d]/25 text-white text-sm placeholder:text-neutral-600 focus:outline-none focus:border-[#dfba73] focus:ring-1 focus:ring-[#dfba73]/30 transition-all"
                   />
                 </div>
               </div>
@@ -216,7 +224,7 @@ export const BookingModal = ({ isOpen, onClose, defaultServiceId }) => {
                     type="date"
                     value={preferredDate}
                     onChange={(e) => setPreferredDate(e.target.value)}
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-[#171920] border border-[#2c2f3b] text-white text-sm focus:outline-none focus:border-white"
+                    className="w-full px-3.5 py-2.5 rounded-xl bg-[#090b10] border border-[#c8a45d]/25 text-white text-sm focus:outline-none focus:border-[#dfba73] focus:ring-1 focus:ring-[#dfba73]/30 transition-all"
                   />
                 </div>
 
@@ -228,7 +236,7 @@ export const BookingModal = ({ isOpen, onClose, defaultServiceId }) => {
                     type="time"
                     value={preferredTime}
                     onChange={(e) => setPreferredTime(e.target.value)}
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-[#171920] border border-[#2c2f3b] text-white text-sm focus:outline-none focus:border-white"
+                    className="w-full px-3.5 py-2.5 rounded-xl bg-[#090b10] border border-[#c8a45d]/25 text-white text-sm focus:outline-none focus:border-[#dfba73] focus:ring-1 focus:ring-[#dfba73]/30 transition-all"
                   />
                 </div>
               </div>
@@ -236,14 +244,14 @@ export const BookingModal = ({ isOpen, onClose, defaultServiceId }) => {
               {/* Notes */}
               <div>
                 <label className="block text-xs font-bold uppercase tracking-wider text-neutral-300 mb-1">
-                  Hair / Beard Requests (Optional)
+                  Custom Grooming Requests (Optional)
                 </label>
                 <input
                   type="text"
-                  placeholder="e.g. Skin fade with low temple taper, beard shape-up"
+                  placeholder="e.g. Skin fade with low temple taper, beard line-up, or hot towel therapy"
                   value={bookingNotes}
                   onChange={(e) => setBookingNotes(e.target.value)}
-                  className="w-full px-3.5 py-2.5 rounded-xl bg-[#171920] border border-[#2c2f3b] text-white text-sm focus:outline-none focus:border-white"
+                  className="w-full px-3.5 py-2.5 rounded-xl bg-[#090b10] border border-[#c8a45d]/25 text-white text-sm placeholder:text-neutral-600 focus:outline-none focus:border-[#dfba73] focus:ring-1 focus:ring-[#dfba73]/30 transition-all"
                 />
               </div>
 
@@ -252,7 +260,7 @@ export const BookingModal = ({ isOpen, onClose, defaultServiceId }) => {
                 <button
                   type="button"
                   onClick={handleWhatsAppDirect}
-                  className="flex-1 py-3 px-4 rounded-xl text-xs font-bold uppercase tracking-wider bg-emerald-600 hover:bg-emerald-500 text-white flex items-center justify-center gap-2 shadow"
+                  className="flex-1 py-3 px-4 rounded-xl text-xs font-bold uppercase tracking-wider bg-emerald-600 hover:bg-emerald-500 text-white flex items-center justify-center gap-2 shadow-lg shadow-emerald-950/40 active:scale-95 transition-all"
                 >
                   <MessageSquare className="w-4 h-4" />
                   <span>Book Instantly via WhatsApp</span>
@@ -260,7 +268,7 @@ export const BookingModal = ({ isOpen, onClose, defaultServiceId }) => {
 
                 <button
                   type="submit"
-                  className="py-3 px-5 rounded-xl text-xs font-bold uppercase tracking-wider bg-white text-black hover:bg-neutral-200 transition-all shadow"
+                  className="py-3 px-6 rounded-xl text-xs font-bold uppercase tracking-wider bg-gradient-to-r from-[#dfba73] via-[#c8a45d] to-[#9a7836] text-black hover:brightness-110 active:scale-95 transition-all shadow-md shadow-[#c8a45d]/20"
                 >
                   Submit Form
                 </button>

@@ -8,39 +8,39 @@ import { Star, CheckCircle, ShieldCheck } from 'lucide-react';
 export const ReviewCard = ({ review = {} }) => {
   const ratingCount = Math.max(1, Math.min(5, Math.floor(Number(review.rating) || 5)));
   return (
-    <div className="bg-[#121317] border border-[#22242c] rounded-2xl p-6 flex flex-col justify-between hover:border-neutral-400/40 hover:bg-[#16181e] transition-all shadow-lg">
+    <div className="leather-surface border border-[#c8a45d]/25 rounded-2xl p-6 flex flex-col justify-between hover:border-[#c8a45d]/60 transition-all shadow-xl hover:shadow-2xl hover:shadow-black/80 group">
       <div className="space-y-3.5">
         <div className="flex items-center justify-between">
-          <div className="flex text-white gap-0.5">
+          <div className="flex text-[#dfba73] gap-1">
             {[...Array(ratingCount)].map((_, i) => (
-              <Star key={i} className="w-4 h-4 fill-white text-white" />
+              <Star key={i} className="w-4 h-4 fill-[#dfba73] text-[#dfba73] drop-shadow-[0_1px_3px_rgba(200,164,93,0.3)]" />
             ))}
           </div>
-          <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-white/10 text-white border border-white/20">
-            {review.highlightTag || 'Verified Client'}
+          <span className="text-[9px] uppercase font-bold tracking-widest px-2.5 py-0.5 rounded-full bg-[#c8a45d]/15 text-[#dfba73] border border-[#c8a45d]/35 font-display">
+            {review.highlightTag || 'Verified Patron'}
           </span>
         </div>
 
-        <h3 className="font-serif text-lg font-bold text-white tracking-wide">
+        <h3 className="font-serif text-lg font-bold text-white tracking-wide group-hover:text-[#dfba73] transition-colors">
           "{review.headline || 'Exceptional Grooming'}"
         </h3>
 
-        <p className="text-xs text-neutral-300 leading-relaxed italic">
+        <p className="text-xs text-neutral-300 leading-relaxed italic font-light">
           "{review.content || review.comment || 'Outstanding cut and service.'}"
         </p>
 
         {review.serviceMentioned && (
           <div className="text-[11px] text-neutral-400 pt-1 flex items-center gap-2">
             <span className="font-semibold text-neutral-300">Service:</span>
-            <span>{review.serviceMentioned}</span>
+            <span className="text-[#dfba73] font-medium">{review.serviceMentioned}</span>
             {review.stylistMentioned && (
-              <span className="text-white font-medium">({review.stylistMentioned})</span>
+              <span className="text-neutral-400">({review.stylistMentioned})</span>
             )}
           </div>
         )}
       </div>
 
-      <div className="pt-4 mt-4 border-t border-[#22242c] flex items-center justify-between text-xs">
+      <div className="pt-4 mt-4 border-t border-[#c8a45d]/20 flex items-center justify-between text-xs">
         <div>
           <span className="font-bold text-white block">{review.author}</span>
           <span className="text-[11px] text-neutral-400">{review.location}</span>

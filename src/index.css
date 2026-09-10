@@ -4,13 +4,18 @@
   --font-logo: "Oswald", -apple-system, BlinkMacSystemFont, sans-serif;
   --font-serif: "Oswald", "Plus Jakarta Sans", sans-serif;
   --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-display: "Cinzel", "Oswald", serif;
+  --font-artistic: "Cormorant Garamond", "Playfair Display", Georgia, serif;
   
-  /* Logo-Derived Color Scheme: Pure Pitch Black, Razor Silver, Stark White */
-  --color-brand-black: #050506;
-  --color-brand-charcoal: #0e0f12;
-  --color-brand-card: #141519;
-  --color-brand-card-hover: #1b1d23;
-  --color-brand-border: #262832;
+  /* Artistic Atelier Color Scheme: Velvet Obsidian, Burnished Champagne Gold, Damascus Steel */
+  --color-brand-black: #060709;
+  --color-brand-charcoal: #0b0d12;
+  --color-brand-card: #11131a;
+  --color-brand-card-hover: #171a24;
+  --color-brand-border: #232734;
+  --color-brand-gold: #c8a45d;
+  --color-brand-gold-light: #dfba73;
+  --color-brand-gold-dark: #8c6d32;
   --color-brand-silver: #e2e8f0;
   --color-brand-silver-muted: #94a3b8;
   --color-brand-white: #ffffff;
@@ -22,28 +27,111 @@
 }
 
 body {
-  background-color: #08090b;
+  background-color: #050608;
   color: #f8fafc;
   overflow-x: hidden;
+  background-image: 
+    radial-gradient(ellipse 90% 60% at 50% -5%, rgba(200, 164, 93, 0.15), transparent 70%),
+    radial-gradient(circle at 85% 35%, rgba(200, 164, 93, 0.05), transparent 55%),
+    radial-gradient(circle at 15% 75%, rgba(200, 164, 93, 0.04), transparent 45%),
+    linear-gradient(to bottom, rgba(5, 6, 8, 0.88), rgba(7, 8, 12, 0.94)),
+    url('/luxury_leather_texture.jpg');
+  background-size: auto, auto, auto, auto, 1280px auto;
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, repeat;
+  background-attachment: fixed;
 }
 
-/* 3D Embossed Logo Text Effect (from uploaded logo) */
+/* Luxurious Leather Backdrop Surface */
+.leather-surface {
+  background-color: #08090d;
+  background-image: 
+    radial-gradient(ellipse at 50% 40%, rgba(200, 164, 93, 0.08), transparent 75%),
+    linear-gradient(to bottom, rgba(8, 9, 13, 0.82), rgba(5, 6, 9, 0.92)),
+    url('/luxury_leather_texture.jpg');
+  background-size: auto, auto, 800px auto;
+  background-repeat: no-repeat, no-repeat, repeat;
+}
+
+/* Focused Spotlight on Dark Leather (Matching reference image) */
+.leather-spotlight {
+  background-color: #040507;
+  background-image: 
+    radial-gradient(circle at 50% 45%, rgba(223, 186, 115, 0.14) 0%, rgba(200, 164, 93, 0.06) 35%, rgba(4, 5, 7, 0.85) 70%, rgba(4, 5, 7, 0.98) 100%),
+    url('/luxury_leather_texture.jpg');
+  background-size: cover, 900px auto;
+  background-repeat: no-repeat, repeat;
+}
+
+/* Artistic typography utility */
+.font-artistic {
+  font-family: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+}
+
+.font-display {
+  font-family: "Cinzel", "Oswald", serif;
+}
+
+/* 3D Embossed Logo Text Effect */
 .logo-embossed {
   text-shadow: 0 2px 0 #9ca3af, 0 4px 10px rgba(0, 0, 0, 0.9);
 }
 
-/* Custom subtle scrollbar */
+/* Hammered 3D Gold Foil (Matching the "Cuts" texture in reference image) */
+.gold-foil-hammered {
+  background: linear-gradient(135deg, #fffbeb 0%, #fef08a 20%, #dfba73 45%, #b4832c 70%, #d97706 85%, #78350f 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0px 2px 3px rgba(0, 0, 0, 0.9)) drop-shadow(0px 6px 12px rgba(0, 0, 0, 0.8));
+}
+
+/* Metallic Beveled 3D Gold Text */
+.gold-embossed-metal {
+  color: #dfba73;
+  text-shadow: 
+    0 1px 1px #fff3bf,
+    0 2px 2px #b48834,
+    0 3px 3px #785215,
+    0 5px 12px rgba(0, 0, 0, 0.95),
+    0 10px 25px rgba(0, 0, 0, 0.8);
+}
+
+/* Artistic Metallic Gold Gradient Text */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #fffbeb 0%, #dfba73 45%, #c8a45d 70%, #9a7836 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Artistic Metallic Silver Gradient Text */
+.silver-gradient-text {
+  background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 50%, #94a3b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Gold Hairline Glow Border */
+.gold-border-glow {
+  border: 1px solid rgba(200, 164, 93, 0.28);
+  box-shadow: 0 0 20px -5px rgba(200, 164, 93, 0.15);
+}
+
+.gold-border-glow:hover {
+  border-color: rgba(200, 164, 93, 0.55);
+  box-shadow: 0 0 30px -2px rgba(200, 164, 93, 0.28);
+}
+
+/* Custom luxury scrollbar */
 ::-webkit-scrollbar {
   width: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: #08090b;
+  background: #07080a;
 }
 ::-webkit-scrollbar-thumb {
-  background: #262832;
+  background: #232734;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #cbd5e1;
+  background: #c8a45d;
 }
 
