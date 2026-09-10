@@ -40,7 +40,7 @@ export default function HomePage({ onNavigate, onOpenBooking }) {
       ))}
 
       {/* 1. HERO SECTION - Monochrome & Silver Steel palette with exact Logo */}
-      <section className="relative pt-12 pb-16 sm:pt-20 sm:pb-28 overflow-hidden">
+      <section className="relative pt-12 pb-16 sm:pt-12 sm:pb-28 overflow-hidden">
         {/* Subtle geometric light glow behind logo */}
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-white/[0.03] blur-[120px] pointer-events-none rounded-full" />
 

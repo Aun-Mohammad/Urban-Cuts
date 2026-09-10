@@ -73,7 +73,7 @@ export const Header = ({
           onClick={() => handleNavClick('home')}
           className="flex items-center gap-3 text-left focus:outline-none group"
         >
-          <Logo size="sm" showSubtitle={true} />
+          <Logo size="sm" showSubtitle={true} layout="inline" />
         </button>
 
         {/* Desktop Navigation */}

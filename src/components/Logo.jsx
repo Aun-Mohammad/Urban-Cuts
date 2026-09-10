@@ -1,25 +1,24 @@
-import React from 'react';
 
 /**
  * Urban Cuts Official Logo Component
  * Uses the exact provided image: Urban_Cuts_bg_removed.png inside an <img> tag.
  */
-export const Logo = ({ size = 'md', showSubtitle = true, className = '' }) => {
+export const Logo = ({ size = 'md', showSubtitle = true, layout = 'stacked', className = '' }) => {
   const sizeConfig = {
     sm: {
-      imgHeight: 'h-10 sm:h-12',
+      imgHeight: 'h-12 sm:h-14',
       subText: 'text-[9px] tracking-[0.2em]',
     },
     md: {
-      imgHeight: 'h-14 sm:h-16',
+      imgHeight: 'h-16 sm:h-20',
       subText: 'text-[10px] tracking-[0.25em]',
     },
     lg: {
-      imgHeight: 'h-20 sm:h-24',
+      imgHeight: 'h-24 sm:h-28',
       subText: 'text-xs tracking-[0.3em]',
     },
     hero: {
-      imgHeight: 'h-28 sm:h-36 lg:h-44',
+      imgHeight: 'h-50 sm:h-50 lg:h-50',
       subText: 'text-xs sm:text-sm tracking-[0.35em]',
     }
   }[size] || {
@@ -28,7 +27,7 @@ export const Logo = ({ size = 'md', showSubtitle = true, className = '' }) => {
   };
 
   return (
-    <div className={`inline-flex flex-col items-center justify-center select-none group ${className}`}>
+    <div className={`inline-flex ${layout === 'inline' ? 'flex-row gap-3' : 'flex-col'} items-center justify-center select-none group ${className}`}>
       <img
         src="/Urban_Cuts_bg_removed.png"
         alt="Urban Cuts Men's Salon Islamabad"
@@ -38,7 +37,7 @@ export const Logo = ({ size = 'md', showSubtitle = true, className = '' }) => {
       />
       
       {showSubtitle && (
-        <span className={`text-neutral-400 font-semibold uppercase mt-1 ${sizeConfig.subText} text-center`}>
+        <span className={`text-neutral-400 font-semibold uppercase ${layout === 'inline' ? '' : 'mt-1'} ${sizeConfig.subText} text-center`}>
           Men's Salon • Islamabad
         </span>
       )}
